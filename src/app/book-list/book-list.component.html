@@ -1,0 +1,48 @@
+<div class="container custom-container-2">
+
+    <!-- Show it when there is no Book -->
+    <div class="no-data text-center" *ngIf="book">
+      <p>There is no book added yet!</p>
+      <button class="btn btn-outline-primary" routerLink="/books/add">Add Book</button>
+    </div>
+  
+    <!-- Books list table, it hides when there is no Book -->
+    
+  <div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Books List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ISDN</th>
+          <th scope="col">Book Name</th>
+          <th scope="col">Libray Id</th>
+          <th scope="col">Libray Name</th>
+          
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let book of books">
+            <td>{{book.isbn}}</td>
+            <td>{{book.name}}</td>
+            <td>{{book.libraryid}}</td>
+            <td>{{book.libraryname}}</td>             
+            <td>
+              <span class="btn btn-outline-primary" routerLink="updateBook(" + {{book.isbn}}+")"\">Edit</span>
+              <span class="btn btn-outline-secondary" (click)="deleteBook(" + {{book.isbn}} + ")"\">Delete</span>
+              <span class="btn btn-success" (click)="getBookById(" + {{book.isbn}} + \")"\">Details</span>
+            </td>
+          </tr>
+       </tbody>
+    </table>
+  </div>
+</div>
+    
+    
+    
+    
+    
+    

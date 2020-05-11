@@ -1,0 +1,21 @@
+<h2>Book Details</h2> 
+
+<hr/>
+<div *ngIf="book">
+  <div>
+    <label><b>Book ISDN: </b></label> {{book.isdn}}
+  </div>
+  <div>
+    <label><b>Book Name: </b></label> {{book.name}}
+  </div>
+  <div>
+    <label><b>Library Id: </b></label> {{book.libraryid}}
+  </div> 
+  <div>
+    <label><b>Library Name: </b></label> {{book.libraryname}}
+  </div>  
+</div>
+
+<br>
+<br>
+<button (click)="getBookDetails()" class="btn btn-primary">Back to Book List</button><br>
